@@ -21,7 +21,7 @@ interface form {
 export default async function Page({ params }: { params: Params }) {
   const id = params.id;
 
-  const response = await axios.get(`https://api.ankushsingh.tech/blog/${id}`);
+  const response = await axios.get(`${process.env.GHOST_API_URL}/blog/${id}`);
   const data = response.data.message.data;
 
   let sym = '",'

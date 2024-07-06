@@ -13,7 +13,7 @@ interface form {
 
 export default async function Page() {
 
-  const res = await axios.get("https://api.ankushsingh.tech");
+  const res = await axios.get(`${process.env.GHOST_API_URL}`);
 
   return (
     <div className="h-screen w-screen flex justify-center items-center px-4 py-6">
