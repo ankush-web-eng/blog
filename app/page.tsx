@@ -13,7 +13,7 @@ interface form {
 
 export default async function Page() {
 
-  const res = await axios.get(`${process.env.GHOST_API_URL}`);
+  const res = await axios.get(`${process.env.GHOST_API_URL}/blog`);
 
   return (
     <div className="md:h-screen flex justify-center items-center px-2 py-6">
