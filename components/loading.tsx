@@ -9,7 +9,7 @@ export default function Loading({children}: Props){
         words: ["...", "..." ],
         loop: true,
         typeSpeed:100,
-        deleteSpeed: 100,
+        deleteSpeed: 150,
     })
     return (
         <span className="text-blue-500">{children} <span>{text}</span><span><Cursor /></span></span>
