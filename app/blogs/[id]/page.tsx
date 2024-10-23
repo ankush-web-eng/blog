@@ -26,6 +26,32 @@ export async function generateMetadata({ params }: { params: Params }) {
     return {
       title: `${data?.title || "Loading..."} | Ankush's World`,
       description: data?.subtitle || "Read the latest Blogs by Ankush",
+      openGraph: {
+        title: `${data?.title || "Blog"} | Ankush's World`,
+        description: data?.subtitle || "Read the latest Blogs by Ankush",
+        images: [
+          {
+            url: data?.image || "/og-image.png",
+            width: 1200,
+            height: 627,
+            alt: `${data?.title} | Ankush's World`,
+          },
+        ],
+        type: "article",
+        locale: "en_US",
+        siteName: "Ankush's Blog",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${data?.title || "Blog"} | Ankush's World`,
+        description: data?.subtitle || "Read the latest Blogs by Ankush",
+        images: [
+          {
+            url: data?.image || "/og-image.png",
+            alt: `${data?.title} | Ankush's World`,
+          },
+        ],
+      },
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);
