@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: Params }) {
     }
 
     return (
-      <div className="h-screen w-full pb-6 md:px-20 flex flex-col justify-start px-3 pt-8 space-y-10">
+      <div className="h-screen w-full pb-6 md:px-20 md:pb-6 flex flex-col justify-start px-3 pt-8 space-y-10 scroll-y-auto">
         <Link href={'/'} className="cursor-pointer">
           <IoMdArrowRoundBack color="blue" size={28} />
         </Link>
@@ -92,7 +92,7 @@ export default async function Page({ params }: { params: Params }) {
         <p className="text-slate-700 font-semibold text-2xl">{data?.subtitle}</p>
 
         {array.map((content, index) => (
-          <p className="text-slate-500 text-sm" key={index}>{content}</p>
+          <p className="text-neutral-600 text-sm" key={index}>{content}</p>
         ))}
       </div>
     );

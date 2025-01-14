@@ -16,8 +16,8 @@ export default async function Page() {
   const res = await axios.get(`${process.env.GHOST_API_URL}/blog`);
 
   return (
-    <div className="md:h-screen flex justify-center items-center px-2 py-6">
-      <div className="grid grid-cols-1 gap-6 py-6 max-md:overflow-auto md:grid-cols-2 lg:grid-cols-3">
+    <div className="min-h-screen flex justify-center items-center px-2 py-8 overflow-y-auto">
+      <div className="grid grid-cols-1 px-3 md:px-9 gap-6 py-6 w-full max-md:overflow-auto md:grid-cols-2 lg:grid-cols-3">
         {res.data.message.data !== null ? (
           res.data.message.data.map((ghost : form, index : any) => (
             <Ghost key={index} params={ghost} />
